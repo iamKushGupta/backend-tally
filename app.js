@@ -44,11 +44,11 @@ io.on('connection', (socket) => {
     socket.emit('playGame', data);
   });
 
-  socket.on('disconnect', () => {
+  socket.on('diskonnect', () => {
     let data = {};
     data.playerId = socket.id;
     socket.broadcast.emit('playerLeft', data);
-    io.emit('disconnect', socket.id);
+    io.emit('diskonnect', socket.id);
   });
 });
 
