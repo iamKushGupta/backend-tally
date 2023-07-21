@@ -1,24 +1,9 @@
-<p align="center">
-  <a href="https://www.rockettyper.com/">
-    <img src="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_logo.png" alt="rocket typer logo" width="400">
-  </a>
-</p>
+# Typing Showdown
 
-[Live Demo](https://rocket-typer.herokuapp.com/)
-
-# Rocket Typer
-
-Rocket Typer was designed to test your typing speed and see how you stack up against other users. It was build using the following technologies: 
+Typing Showdown was designed to test your typing speed and see how you stack up against other users. It was build using the following technologies: 
 * <strong>Frontend</strong>: React.js with Redux, socket.io
 * <strong>Backend</strong>: Node.js with a MongoDB database
 * <strong>Other</strong>: SCSS, Express.js, Heroku, Socket.io
-
-*** 
-# Features 
-* [Play against other users](https://github.com/jameshawkinsjr/rocket-typer#multiplayer)
-* [Test your typing speed](https://github.com/jameshawkinsjr/rocket-typer#speed-test)
-* [Viewing a user's stats](https://github.com/jameshawkinsjr/rocket-typer#user-profiles)
-* [View the global leaderboard](https://github.com/jameshawkinsjr/rocket-typer#global-leaderboard)
 
 
 <br>
@@ -28,11 +13,6 @@ Socket.io allows for management of individual multiplayer games. Upon joining th
 
 Once the game has been completed, all scores are submitted via an API endpoint and the statistics for the game can be found on each user's profile or on the "Recent Games" tab of the homepage.
 
-<p align="center">
-  <a href="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_waiting_room.gif">
-    <img src="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_waiting_room.gif" alt="rocket typer">
-  </a>
-</p>
 
 ```js
   io.on('connection', (socket) => {
@@ -72,40 +52,22 @@ Once the game has been completed, all scores are submitted via an API endpoint a
 <br>
 
 ### Speed Test
-Utilizing keypress event listeners and React's local state, Rocket Typer is able to keep track of correctly typed letters, while calculating words per minute, and accuracy. Upon completion of the given phrase, an API call automatically saves the race, so that it can be posted to the global leaderboard and the user's profile page will reflect the most recent stats.
+Utilizing keypress event listeners and React's local state, Typing Showdown is able to keep track of correctly typed letters, while calculating words per minute, and accuracy. Upon completion of the given phrase, an API call automatically saves the race, so that it can be posted to the global leaderboard and the user's profile page will reflect the most recent stats.
 
 With React, we're able the user's progress in the game as local state to other components which allow for rendering of the rocket's trip from Earth to Mars.
-
-<p align="center">
-  <a href="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer.gif">
-    <img src="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer.gif" alt="rocket typer">
-  </a>
-</p>
-
 
 *** 
 <br>
 
 ### User profiles
-When visiting a user's profile, Rocket Typer presents a plethora of statistics about that user, including signup date, number of races, average speed, and top 10 fastest races.
-
-<p align="center">
-  <a href="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_profile.png">
-    <img src="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_profile.png" alt="rocket typer" width="600">
-  </a>
-</p>
+When visiting a user's profile, Typing Showdown presents a plethora of statistics about that user, including signup date, number of races, average speed, and top 10 fastest races.
 
 ***
 <br>
 
 ### Global Leaderboard
-The homepage for Rocket Typer shows the global top 10 fastest races and 10 latest races via custom SQL queries to the MongoDB database.
+The homepage for Typing Showdown shows the global top 10 fastest races and 10 latest races via custom SQL queries to the MongoDB database.
 
-<p align="center">
-  <a href="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_leaderboard.png">
-    <img src="https://github.com/jameshawkinsjr/rocket-typer/blob/master/frontend/public/assets/rocket_typer_leaderboard.png" alt="rocket typer" width="700">
-  </a>
-</p>
 
 ```js
   router.get('/recent', (req, res) => {
